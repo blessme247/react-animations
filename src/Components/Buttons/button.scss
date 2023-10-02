@@ -1,0 +1,137 @@
+@import "../../sass/abstracts/variables";
+@import "../../sass/components/global";
+
+.btnPageWrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+  .button {
+    position: relative;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    &:hover > .button__inner {
+        right: -5px;
+        bottom: -5px;
+      }
+  
+
+  .button__inner {
+    position: relative;
+    z-index: 1;
+    padding: 15px 45px 15px 21px;
+    border: 1px solid #000;
+    background-color: #fff;
+    background-image: url("../../assets/Images/right-arrow.svg");
+    background-position: 88% 49%;
+    background-size: auto 11px;
+    background-repeat: no-repeat;
+    color: #000;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    right: 0px;
+    bottom: 0px;
+    transition: bottom 300ms ease, right 300ms ease;
+    display: inline-block;
+  }
+
+  .button__double {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    background-color: #fff;
+  }
+
+}
+
+  .hoverLink {
+    border: none;
+    background: none;
+    color: $white;
+    border-bottom: 1px solid rgba($color: rgb(255, 255, 255), $alpha: 0.2);
+    padding: 0 0 0.5rem;
+    font-family: "Monument Extended";
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover > span > span,
+    &:focus > span > span {
+      transform: translateY(-200%);
+    }
+
+    & > span {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      pointer-events: none;
+    }
+
+    & > span > span {
+      display: inline-block;
+      &:nth-of-type(1) {
+        transition: 0.4s ease all;
+      }
+      &:nth-of-type(2) {
+        transition: 0.4s ease all;
+        transition-delay: 0.07s;
+        margin-left: .5rem;
+      }
+
+    }
+
+    & > span > span > span {
+      content: attr(data-text);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(200%);
+      &:nth-of-type(2) {
+        margin-left: .5rem;
+      }
+    }
+  }
+
+
+
+}
+
+#cursor {
+  pointer-events: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 1px solid rgba($color: rgb(255, 255, 255), $alpha: 0.2);
+  transition: 0.35s ease width, 0.35s ease height, 0.35s ease background, 0.35s ease border;
+  transform: translate(-50%, -50%);
+
+}
+
+#cursor.button {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.5);
+}
+
